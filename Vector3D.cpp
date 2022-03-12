@@ -65,16 +65,6 @@ double Vector3D::Len()
 	return sqrt( pow(x, 2) + pow(y, 2) + pow(z, 2));
 }
 
-void Vector3D::LenCompare(Vector3D a)
-{
-	if (a.Len() < Len())
-		cout << "first vector is large than second vector" << endl;
-	if (a.Len() > Len())
-		cout << "second vector is large than first vector" << endl;
-	if (a.Len() == Len())
-		cout << "vectors are equall" << endl;
-}
-
 string Vector3D::toString() 
 {
 	stringstream sout;
@@ -84,10 +74,39 @@ string Vector3D::toString()
 	return sout.str();
 }
 
-void Vector3D::Compare(Vector3D a)
+
+bool Equal(Vector3D l, Vector3D r)
 {
-	if (a.x == x && a.y == y && a.z == z)
-		cout << "vectors are equall" << endl;
-	else
-		cout<< "vectors are different" << endl;
+	return l.Len() == r.Len();
 }
+
+bool NEqual(Vector3D l, Vector3D r)
+{
+	return !(l.Len() == r.Len());
+}
+
+bool Compare(Vector3D l, Vector3D r)
+{
+	return (l.x == r.x && l.y == r.y && l.z == r.z);
+}
+
+bool Less(Vector3D l, Vector3D r)
+{
+	return l.Len() < r.Len();
+}
+
+bool NLess(Vector3D l, Vector3D r)
+{
+	return !(l.Len() < r.Len());
+}
+
+bool Greate(Vector3D l, Vector3D r)
+{
+	return l.Len() > r.Len();
+}
+
+bool NGreate(Vector3D l, Vector3D r)
+{
+	return !(l.Len() > r.Len());
+}
+
