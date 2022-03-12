@@ -29,8 +29,24 @@ int main()
 	cout << "length of second vector = " << b.Len() << endl;
 	cout << endl;
 
-	a.LenCompare(b); 
-	a.Compare(b);
+	if (Compare(a, b))
+		cout << "vectors are the same " << endl;
+	if (!Compare(a, b))
+		cout << "vectors aren`t the same " << endl;
+	if (Greate(a, b))
+		cout << "first vector is larger than second" << endl;
+	if (NGreate(a, b))
+		cout << "first vector isn`t larger than second" << endl;
+	if (Less(a, b))
+		cout << "first vector is less than second" << endl;
+	if (NLess(a, b))
+		cout << "first vector isn`t less than second" << endl;
+	if (Equal(a, b))
+		cout << "vectors are equal" << endl;
+	if (NEqual(a, b))
+		cout << "vectors aren`t equal" << endl;
+
+
 
 	cout << endl;
 	cout << "toString method test" << endl << "first vector info : " << a.toString() << endl << "second vector info :" << b.toString() << endl;
