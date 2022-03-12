@@ -16,13 +16,22 @@ public:
 	void setX(int value);
 	void setY(int value);
 	void setZ(int value);
+
 	void Init(int x, int y, int z);
 	void Read();
 	void Display();
+
 	Vector3D ScalMultiplay(int value);
 	double Len();
-	void LenCompare(Vector3D a);
 	string toString();
-	void Compare(Vector3D a);
+
+	friend bool Compare(Vector3D l, Vector3D r);
+	friend bool Less(Vector3D l, Vector3D r);
+	friend bool Greate(Vector3D l, Vector3D r);
+	friend bool Equal(Vector3D l, Vector3D r);
+	friend bool NLess(Vector3D l, Vector3D r);
+	friend bool NGreate(Vector3D l, Vector3D r);
+	friend bool NEqual(Vector3D l, Vector3D r);
+
 };
 
